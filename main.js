@@ -9,7 +9,7 @@ let person = [
     Pavel = {
         name: 'Pavel',
         city: 'Donetsk',
-        army: 'Donetsk rebel army',
+        army: 'USA Marine Corps',
         age: 31,
         born: 1982,
     },
@@ -41,14 +41,16 @@ btn.addEventListener('click', ()=>{
 
 const showPerson = (item, index) =>{
     const container = document.querySelector('.container');
+    while(container.firstChild){
+        container.removeChild(container.firstChild);
+    }
     container.insertAdjacentHTML('afterbegin', `
-    <div class="person-info(${index})"> 
-    <li class="name">${item.name}</li>
-    <li class="city">${item.city}</li>
-    <li class="army">${item.army}</li>
-    <li class="age">${item.age}</li>
-    <li class="${item.born}">1985</li>
+    <div class="person-info"${index}> 
+    <li class="name">Name: ${item.name}</li>
+    <li class="city">City: ${item.city}</li>
+    <li class="army">Army: ${item.army}</li>
+    <li class="age">Age: ${item.age}</li>
+    <li class="born">Born in: ${item.born}</li>
     </div>
     `  ) 
-    
 }

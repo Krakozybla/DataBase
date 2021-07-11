@@ -55,7 +55,9 @@ li{
     transition: 0.5s ease;
     width: 23%;
 }
-
+.container{
+    width: 100%;
+}
 
 .person-info{
     margin-top: 25px;
