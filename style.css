@@ -68,3 +68,8 @@ li{
     justify-content: space-between;
     color: white;
 }
+
+.btn-del{
+    width: 50%;
+    margin: 0 auto;
+}
