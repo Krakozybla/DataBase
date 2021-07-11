@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+li{
+    list-style: none;
+    margin-top: 5px;
+}
+.wrap{
+    width: 100%;
+}
+
+.search-wrapper{
+    max-width: 620px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 250px auto;
+}
+.search{
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    padding: 20px;
+}
+
+.inp{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding-left: 20px;
+
+}
+
+.btn{
+    position: absolute;
+    right: 0;
+    width: 20%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.btn{
+    background-color: cornflowerblue;
+    border: none;
+    color: white;
+    transition: 0.5s ease;
+}
+
+.btn:hover{
+    background-color: cyan;
+    color: darkgoldenrod;
+    transition: 0.5s ease;
+    width: 23%;
+}
+
+
+.person-info{
+    margin-top: 25px;
+    padding: 10px;
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+}
