@@ -17,7 +17,6 @@ let person = [
         name: 'Oleg',
         city: 'Donetsk',
         army: 'Donetsk rebel army',
-        age: 18,
         born: 2002,
     }
 ]
@@ -31,14 +30,27 @@ inp.addEventListener('keyup', ()=>{
     const regExp = new RegExp("^[A-zА-яЁё]+$"); 
     const val = inp.value.trim();
     if(!regExp.test(val)){
-        resNeagitive.textContent = 'You can write only words, numbers are prohibeten value!!!'
+        resNeagitive.textContent = 'You can write only words, numbers are prohibited value!!!'
         btn.setAttribute("disabled", "disabled");
+        if(btn.hasAttribute("disabled")){
+            btn.classList.add('disabled');
+            btn.textContent = 'Disabled';
+        }
         return ''
-    }else if(val.length === 0 || val.length < 0){
+    }else if(inp.value === ''){
         resNeagitive.textContent = ''
+        btn.removeAttribute("disabled", "disabled");
+        if(!btn.hasAttribute("disabled")){
+            btn.classList.remove('disabled');
+            btn.textContent = 'Send Request';
+        }
     }else{
         resNeagitive.textContent = ''
         btn.removeAttribute("disabled", "disabled");
+        if(!btn.hasAttribute("disabled")){
+            btn.classList.remove('disabled');
+            btn.textContent = 'Send Request';
+        }
     }
 })
 btn.addEventListener('click', ()=>{
@@ -57,6 +69,7 @@ btn.addEventListener('click', ()=>{
     })
     if(!map){
         resNeagitive.textContent = `Such person ${valInp} is not excist in DataBase`;
+        container.innerHTML = '';
     }
     inp.value = '';
 })
@@ -71,7 +84,12 @@ const showPerson = (item, index) =>{
     <li class="name">Name: ${item.name}</li>
     <li class="city">City: ${item.city}</li>
     <li class="army">Army: ${item.army}</li>
-    <li class="age">Age: ${item.age}</li>
+    ${item.age ? 
+        `<li class="age">Age: ${item.age}</li>`
+        :
+        
+        'Not definet'
+    }
     <li class="born">Born in: ${item.born}</li>
     <button class="btn-del">Delite</button>
     </div>

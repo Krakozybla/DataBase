@@ -9,6 +9,7 @@ li{
 }
 .wrap{
     width: 100%;
+    overflow: hidden;
 }
 
 .search-wrapper{
@@ -72,4 +73,15 @@ li{
 .btn-del{
     width: 50%;
     margin: 0 auto;
+}
+
+.disabled{
+    background-color: red;
+    width: 20%;
+}
+
+.res-negative{
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: red;
 }
