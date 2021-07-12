@@ -27,6 +27,18 @@ const btn = document.querySelector('.btn');
 let resNeagitive = document.querySelector('.res-negative');
 let container;
 
+inp.addEventListener('keyup', ()=>{
+    const regExp = new RegExp("^[A-zА-яЁё]+$"); 
+    const val = inp.value.trim();
+    if(!regExp.test(val)){
+        resNeagitive.textContent = 'You can write only words, numbers are prohibeten value!!!'
+        return ''
+    }else if(val.length === 0 || val.length < 0){
+        resNeagitive.textContent = ''
+    }else{
+        resNeagitive.textContent = ''
+    }
+})
 btn.addEventListener('click', ()=>{
     valInp = inp.value;
     let map = false;
@@ -66,6 +78,7 @@ const showPerson = (item, index) =>{
     container.addEventListener('click', (e)=>{
         if(e.target.classList.contains('btn-del')){
             const target = e.target.closest('.person-info')
+            
             target.remove();
         }
     })
