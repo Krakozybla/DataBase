@@ -32,11 +32,13 @@ inp.addEventListener('keyup', ()=>{
     const val = inp.value.trim();
     if(!regExp.test(val)){
         resNeagitive.textContent = 'You can write only words, numbers are prohibeten value!!!'
+        btn.setAttribute("disabled", "disabled");
         return ''
     }else if(val.length === 0 || val.length < 0){
         resNeagitive.textContent = ''
     }else{
         resNeagitive.textContent = ''
+        btn.removeAttribute("disabled", "disabled");
     }
 })
 btn.addEventListener('click', ()=>{
@@ -78,8 +80,12 @@ const showPerson = (item, index) =>{
     container.addEventListener('click', (e)=>{
         if(e.target.classList.contains('btn-del')){
             const target = e.target.closest('.person-info')
-            
-            target.remove();
+            let animate = container.animate([
+                {"transform":"translateY(1000px)"},
+            ], 1000)
+            animate.addEventListener('finish', ()=>{
+                target.remove();
+            })
         }
     })
 }
